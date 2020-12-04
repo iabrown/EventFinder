@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
+import EventList from './EventList';
 
 class App extends React.Component {
 
@@ -7,6 +8,8 @@ class App extends React.Component {
     return(
       <div>
       <SearchBar />
+      <EventList />
+
       </div>
     );
   }
