@@ -1,11 +1,14 @@
 import React from 'react';
-import Axios from 'Axios';
+// import axios from 'axios';
+import passport from 'passport-bnet';
 import SearchBar from './SearchBar';
 import EventList from './EventList';
 
 class App extends React.Component {
   onSearchSubmit(term){
-    console.log(term);
+    // axios.get('https://api.meetup.com/find/upcoming_events',{
+    //
+    // });
   }
 
   render(){
