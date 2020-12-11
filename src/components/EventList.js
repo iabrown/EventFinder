@@ -1,9 +1,51 @@
 import React from 'react';
+import EventCard from './EventCard';
 
 class EventList extends React.Component {
+  state = {
+  }
+
+
+
   render(){
     return(
-      <div>Event List Here</div>
+      <div className="EventList">
+
+
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+      <EventCard/>
+
+
+
+      </div>
     );
   }
 }

@@ -1,5 +1,36 @@
+* {
+  font-family: 'Lobster', 'cursive';
+}
+
+h1 {
+  font-family: 'Lobster', 'cursive';
+}
+
 .SearchBar {
   margin:0px;
   padding:0px;
   background-color:#58a9df;
+}
+.EventList{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+  grid-gap:5px 5px;
+  grid-auto-rows:auto;
+
+}
+.EventCard{
+  background-color:#d8dddf;
+  display:block;
+  /* padding:25px; */
+  /* margin:20px; */
+}
+.EventCard img{
+  width:100%;
+}
+
+.Footer{
+  background-color:#a4def9;
+  min-height:50px;
+  /* position: fixed; */
+  bottom:0px;
 }
