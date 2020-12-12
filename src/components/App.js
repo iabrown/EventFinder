@@ -9,7 +9,7 @@ class App extends React.Component {
 
   render(){
     return(
-      <div className="container-fluid" style={{padding:'0px'}}>
+      <div className="container-fluid Main" style={{padding:'0px'}}>
       <SearchBar SearchSubmit={this.onSearchSubmit}/>
       <EventList />
 

@@ -5,7 +5,9 @@ class EventCard extends React.Component{
     super(props);
     this.state = {
       spans: 0,
-      imageNumber:(Math.floor(Math.random()*8)+1)
+      imageNumber:(Math.floor(Math.random()*8)+1),
+      //uniqueID is generatoring a random ID Number, this will not be needed when using an API request for images. Returned JSON from API request will include an unique ID.
+      uniqueID:(Math.floor(Math.random()*26)+1)+(Math.floor(Math.random()*36)+26)+(Math.floor(Math.random()*46)+1)
     };
 
     this.imageRef = React.createRef();
@@ -29,13 +31,41 @@ class EventCard extends React.Component{
   //   this.setState({imageNumber:randNumb});
   // };
 
-changeBackground = (e) => {
-  e.target.style.background = 'blue';
-}
+  cardHover = (e) => {
+    const parentElement = document.querySelector('#EventCard' + this.state.uniqueID);
+
+    if (e.target !== parentElement){
+      parentElement.style.opacity="100%";
+      parentElement.style.background="#141414";
+      parentElement.style.transition="1.5s"
+      parentElement.style.color="#ffffff";
+    } else {
+      e.target.style.opacity="100%";
+      e.target.style.background="#141414";
+      e.target.style.transition="1.5s"
+      e.target.style.color="#ffffff";
+
+    }
+
+  }
+
+  cardHoverOut = (e) => {
+    const parentElement = document.querySelector('#EventCard' + this.state.uniqueID);
+
+    parentElement.style.opacity="";
+    parentElement.style.background="";
+    parentElement.style.transition="0.8s"
+    parentElement.style.color="";
+    e.target.style.opacity="";
+    e.target.style.background="";
+    e.target.style.transition="0.5s"
+    e.target.style.color="";
+
+  }
 
   render(){
     return(
-      <div className="EventCard" style={{gridRowEnd:`span ${this.state.spans}`}} >
+      <div className="EventCard" id={"EventCard" + this.state.uniqueID} style={{gridRowEnd:`span ${this.state.spans}`}} onMouseEnter={this.cardHover} onMouseLeave={this.cardHoverOut}>
         <img alt="car"  ref={this.imageRef} src={"images/image" + this.state.imageNumber + ".jpg"}/>
         <br />
         <h1>Event Title</h1>

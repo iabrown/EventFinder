@@ -14,8 +14,7 @@ class SearchBar extends React.Component{
     return(
      <div className="container-fluid SearchBar">
       <form onSubmit={this.onFormSubmit}>
-      <label> Event Search...</label>
-      <input type="text" id="SearchBar" value={this.state.term} onChange={e => this.setState({term: e.target.value})} />
+      <input type="text" id="SearchBar" value={this.state.term} onChange={e => this.setState({term: e.target.value})} placeholder="Event Search..."/>
       </form>
      </div>
    );

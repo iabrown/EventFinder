@@ -6,26 +6,44 @@ h1 {
   font-family: 'Lobster', 'cursive';
 }
 
+.Main{
+  background-color:rgba(0, 0, 0, 0.78);
+}
 .SearchBar {
   margin:0px;
   padding:0px;
   background-color:#58a9df;
+}
+.SearchBar input{
+  width:100%;
+    min-height:20vh;
+    font-family: 'Lobster';
+    text-align:center;
+    font-size:100px;
+    border:none;
+}
+.SearchBar input:focus{
+  outline:none;
 }
 .EventList{
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
   grid-gap:10px 5px;
   grid-auto-rows:auto;
+  text-align:center;
 
 }
 .EventCard{
   background-color:#d8dddf;
   display:block;
-  /* padding:25px; */
-  /* margin:20px; */
+  opacity:15%;
 }
 .EventCard img{
   width:100%;
+}
+.EventCard h1{
+  margin:0px;
+  font-size:30px;
 }
 
 .Footer{
