@@ -29,11 +29,13 @@ class EventCard extends React.Component{
   //   this.setState({imageNumber:randNumb});
   // };
 
-
+changeBackground = (e) => {
+  e.target.style.background = 'blue';
+}
 
   render(){
     return(
-      <div className="EventCard" style={{gridRowEnd:`span ${this.state.spans}`}}>
+      <div className="EventCard" style={{gridRowEnd:`span ${this.state.spans}`}} >
         <img alt="car"  ref={this.imageRef} src={"images/image" + this.state.imageNumber + ".jpg"}/>
         <br />
         <h1>Event Title</h1>
