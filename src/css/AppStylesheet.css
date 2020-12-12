@@ -16,6 +16,9 @@ h1 {
 
 .Main{
   background-color:rgba(0, 0, 0, 0.85);
+  display:block;
+  position:absolute;
+  min-height:100%;
 
 }
 .SearchBar {
@@ -64,7 +67,26 @@ h1 {
 
 .Footer{
   background-color:#a4def9;
+  display:block;
   min-height:50px;
-  /* position: fixed; */
+  position: fixed;
   bottom:0px;
+  height:15vh;
+  line-height:6vh;
+  text-align:center;
+  border:none;
+  background-color:rgba(7, 14, 18, 1);
+  transition:1s;
+  color:rgba(117,117,117,1);
+}
+.Footer h1{
+  font-family: 'Roboto', sans-serif;
+  display:inline-block;
+  font-size:15px;
+  width:50%;
+}
+.Footer p {
+  font-family: 'Roboto', sans-serif;
+  font-size:15px;
+
 }
