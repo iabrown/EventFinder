@@ -2,17 +2,25 @@
   font-family: 'Lobster', 'cursive';
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+  /* scroll-behavior:smooth; */
+
+}
+
 h1 {
   font-family: 'Lobster', 'cursive';
 }
 
 .Main{
-  background-color:rgba(0, 0, 0, 0.78);
+  background-color:rgba(0, 0, 0, 0.85);
+
 }
 .SearchBar {
   margin:0px;
   padding:0px;
-  background-color:#58a9df;
 }
 .SearchBar input{
   width:100%;
@@ -21,9 +29,15 @@ h1 {
     text-align:center;
     font-size:100px;
     border:none;
+    background-color:rgba(7, 14, 18, 1);
+    transition:1s;
+
 }
 .SearchBar input:focus{
   outline:none;
+  background-color:rgba(33, 64, 84, 1);
+  color:#ffffff;
+  transition:1s;
 }
 .EventList{
   display:grid;
@@ -36,7 +50,9 @@ h1 {
 .EventCard{
   background-color:#d8dddf;
   display:block;
-  opacity:15%;
+  opacity:13%;
+  border:solid 3px rgba(7, 14, 18, 1);
+
 }
 .EventCard img{
   width:100%;

@@ -39,6 +39,7 @@ class EventCard extends React.Component{
       parentElement.style.background="#141414";
       parentElement.style.transition="1.5s"
       parentElement.style.color="#ffffff";
+
     } else {
       e.target.style.opacity="100%";
       e.target.style.background="#141414";
@@ -52,13 +53,13 @@ class EventCard extends React.Component{
   cardHoverOut = (e) => {
     const parentElement = document.querySelector('#EventCard' + this.state.uniqueID);
 
+    parentElement.style.transition="0.5s"
     parentElement.style.opacity="";
     parentElement.style.background="";
-    parentElement.style.transition="0.8s"
     parentElement.style.color="";
+    e.target.style.transition="0.5s"
     e.target.style.opacity="";
     e.target.style.background="";
-    e.target.style.transition="0.5s"
     e.target.style.color="";
 
   }
