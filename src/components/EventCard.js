@@ -39,12 +39,14 @@ class EventCard extends React.Component{
       parentElement.style.background="#141414";
       parentElement.style.transition="1.5s"
       parentElement.style.color="#ffffff";
+      parentElement.style.cursor="pointer";
 
     } else {
       e.target.style.opacity="100%";
       e.target.style.background="#141414";
       e.target.style.transition="1.5s"
       e.target.style.color="#ffffff";
+      e.target.style.cursor="pointer";
 
     }
 

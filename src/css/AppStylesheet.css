@@ -71,13 +71,16 @@ h1 {
   min-height:50px;
   position: fixed;
   bottom:0px;
-  height:15vh;
+  min-height:10vh;
   line-height:6vh;
   text-align:center;
   border:none;
   background-color:rgba(7, 14, 18, 1);
   transition:1s;
   color:rgba(117,117,117,1);
+  padding-top:2vh;
+  padding-bottom:2vh;
+
 }
 .Footer h1{
   font-family: 'Roboto', sans-serif;
@@ -88,5 +91,14 @@ h1 {
 .Footer p {
   font-family: 'Roboto', sans-serif;
   font-size:15px;
+  margin-bottom:0px;
 
+}
+.Footer svg {
+  fill:rgba(117,117,117,1);
+  margin-right:8px;
+  margin-left:8px;
+}
+.Footer #Copyright{
+  font-size:10px;
 }
