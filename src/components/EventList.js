@@ -1,67 +1,11 @@
 import React from 'react';
 import EventCard from './EventCard';
 
-class EventList extends React.Component {
-  state = {
-  }
-
-
-
-  render(){
-    return(
-      <div className="EventList">
-
-
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-      <EventCard/>
-
-
-
-      </div>
-    );
-  }
-}
+const EventList = (props) => {
+  const images = props.images.map((image) => {
+    return <EventCard key={image.id} image={image}/>
+  });
+  return <div className="EventList">{images}</div>
+};
 
 export default EventList;

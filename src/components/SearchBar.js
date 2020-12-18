@@ -13,7 +13,7 @@ class SearchBar extends React.Component{
   render(){
     return(
      <div className="container-fluid SearchBar">
-      <form onSubmit={this.onFormSubmit}>
+      <form onSubmit={this.onFormSubmit} autocomplete="off">
       <input type="text" id="SearchBar" value={this.state.term} onChange={e => this.setState({term: e.target.value})} placeholder="Event Search..."/>
       </form>
      </div>

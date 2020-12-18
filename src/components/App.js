@@ -1,12 +1,23 @@
 import React from 'react';
+import unsplash from '../api/unsplash';
 import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
 import SearchBar from './SearchBar';
 import EventList from './EventList';
 import Footer from './Footer';
 
 class App extends React.Component {
-  onSearchSubmit(term){
-  }
+  state = { images: [] };
+
+
+
+  onSearchSubmit = async term => {
+    const response = await unsplash.get('/search/photos', {
+      params: { query: term }
+    });
+
+    this.setState({ images: response.data.results });
+  };
+
 
   render(){
     return(
@@ -14,7 +25,7 @@ class App extends React.Component {
       <ReactScrollWheelHandler  upHandler={(e)=>console.log("scroll up")} downHandler={(e)=>console.log("scroll down")}>
 
         <SearchBar SearchSubmit={this.onSearchSubmit}/>
-        <EventList/>
+        <EventList images={this.state.images}/>
 
       </ReactScrollWheelHandler>
       <Footer />
