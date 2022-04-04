@@ -5,33 +5,35 @@ import SearchBar from './SearchBar';
 import EventList from './EventList';
 import Footer from './Footer';
 
-class App extends React.Component {
-  state = { images: [] };
+const App = () => {
+  const [images,setImages] = React.useState(localStorage.getItem('images') || []);
+  const [term, setTerm] = React.useState(localStorage.getItem('term') || "");
 
-
-
-  onSearchSubmit = async term => {
+  const onSearchSubmit = async (event) => {
     const response = await unsplash.get('/search/photos', {
       params: { query: term }
     });
-
-    this.setState({ images: response.data.results });
-  };
-
-
-  render(){
-    return(
-      <div className="container-fluid Main" style={{padding:'0px'}}>
-      <ReactScrollWheelHandler  upHandler={(e)=>console.log("scroll up")} downHandler={(e)=>console.log("scroll down")}>
-
-        <SearchBar SearchSubmit={this.onSearchSubmit}/>
-        <EventList images={this.state.images}/>
-
-      </ReactScrollWheelHandler>
-      <Footer />
-      </div>
-    );
+    setImages(response.data.results);
   }
+
+  const onSetTerm = (event) => {
+    setTerm(event.target.value);
+  }
+
+
+  return(
+    <div className="container-fluid Main" style={{padding:'0px'}}>
+    <ReactScrollWheelHandler  upHandler={(e)=>console.log("scroll up")} downHandler={(e)=>console.log("scroll down")}>
+
+      <SearchBar SearchSubmit={onSearchSubmit} term={term} setTerm={onSetTerm}/>
+      <EventList images={images} />
+
+    </ReactScrollWheelHandler>
+    <Footer />
+    </div>
+
+  )
 }
+
 
 export default App;

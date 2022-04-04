@@ -29,24 +29,28 @@ class EventCard extends React.Component{
   // };
 
   cardHover = (e) => {
+    e.target.style.cursor="pointer";
+    setTimeout( () => {
+      console.log("Mouse entering card: " + this.props.image.id);
       e.target.style.opacity="100%";
-      e.target.style.background="#141414";
-      e.target.style.transition="1.5s"
-      e.target.style.color="#ffffff";
-      e.target.style.cursor="pointer";
+    }, 500);
   }
 
   cardHoverOut = (e) => {
-    e.target.style.transition="0.5s"
-    e.target.style.opacity="";
-    e.target.style.background="";
-    e.target.style.color="";
+    setTimeout( () => {
+      console.log("Mouse leaving card: " + this.props.image.id);
+      e.target.style.transition="0.5s"
+      e.target.style.opacity="";
+      e.target.style.background="";
+      e.target.style.color="";
+    }, 500);
   }
 
   render(){
     const {description, urls,id} = this.props.image;
     return(
-      <div className="EventCard" id={id} style={{gridRowEnd:`span ${this.state.spans}`}} onMouseEnter={this.cardHover} onMouseLeave={this.cardHoverOut}onMouseOut={this.cardHoverOut}>
+
+      <div className="EventCard" id={id} style={{gridRowEnd:`span ${this.state.spans}`}} onMouseEnter={this.cardHover} onMouseLeave={this.cardHoverOut} >
         <img alt={description}  ref={this.imageRef} src={urls.regular}/>
         <br />
         <h1>Event Title</h1>

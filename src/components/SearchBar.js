@@ -1,24 +1,21 @@
 import '../css/AppStylesheet.css';
 import React from 'react';
 
-class SearchBar extends React.Component{
-  state = {term: ''};
+const SearchBar = (props) => {
 
-  onFormSubmit = (event) => {
+  const onFormSubmit = (event) => {
     event.preventDefault();
-
-  this.props.SearchSubmit(this.state.term)
+    props.SearchSubmit();
   }
 
-  render(){
-    return(
-     <div className="container-fluid SearchBar">
-      <form onSubmit={this.onFormSubmit} autocomplete="off">
-      <input type="text" id="SearchBar" value={this.state.term} onChange={e => this.setState({term: e.target.value})} placeholder="Event Search..."/>
-      </form>
-     </div>
-   );
-  }
+
+  return(
+    <div className="container-fluid SearchBar">
+     <form onSubmit={onFormSubmit} autoComplete="off">
+     <input type="text" id="SearchBar" value={props.term} onChange={props.setTerm} placeholder="Event Search..."/>
+     </form>
+    </div>
+  )
 }
 
 export default SearchBar;
